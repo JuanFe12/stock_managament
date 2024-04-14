@@ -38,9 +38,15 @@ node --loader ts.node/esm src/db/migrate.ts
 ```
 
 
-### Postmand
+### Swagger Documentation
 
-If you need the collection of postmand for the endpoint, soon we are going to migrate to swagger
+You can check the documentation of the api in this endpoint
+
+```
+http://localhost:3001/docs
+
+```
+
 
 ### Unit Tests
 
