@@ -5,10 +5,10 @@ import routesUsers from '../routes/users.routes';
 import routesSales from '../routes/sales.routes';
 import routesSuppliers from '../routes/suppliers.routes';
 import routesClients from '../routes/clients.routes';
-
-
 import cors from "cors";
-
+import swaggerUi from "swagger-ui-express";
+import swaggerJsDoc from "swagger-jsdoc";
+import { options } from "../swaggerOptions";
 
 class Server {
 
@@ -44,11 +44,13 @@ class Server {
 
     routes(){
         this.app.use('/api/products', routesProducts)
-        this.app.use('/api/users', routesUsers)
         this.app.use('/api/sales', routesSales)
         this.app.use('/api/suppliers', routesSuppliers)
         this.app.use('/api/Clients', routesClients)
+        const spec = swaggerJsDoc(options)
 
+        this.app.use('/api/users', routesUsers)
+        this.app.use('/docs', swaggerUi.serve, swaggerUi.setup(spec))
 
     }
 
