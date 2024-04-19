@@ -50,8 +50,12 @@ http://localhost:3001/docs
 
 ### Unit Tests
 
-This are going to set soon
+for run the unit test you can check the folder _test_ for all the files, for run the test run this command:
 
+```
+npm run test
+
+```
 
 ## How To Deploy
 
